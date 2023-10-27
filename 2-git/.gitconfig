@@ -1,0 +1,9 @@
+
+[user]
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = /usr/bin/vim
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true

@@ -1,0 +1,94 @@
+global:
+    sql_adapter: wpcli
+
+local:
+    vhost: local.vhost
+    wordpress_path: local.wordpress_path
+
+    database:
+        name: local.database.name
+        user: local.database.user
+        password: ''
+        host: localhost
+
+prod:
+    vhost: prod.vhost
+    wordpress_path: prod.wordpress_path
+
+    database:
+        name: prod.database.name
+        user: prod.database.user
+        password: prod.database.password
+
+    exclude:
+        - 'bin/'
+        - 'tmp/*'
+        - 'Gemfile*'
+        - 'Movefile'
+        - 'movefile'
+        - 'movefile.yml'
+        - 'movefile.yaml'
+        - 'wp-config.php'
+        - 'google*.html'
+        - '*.orig'
+        - '/node_modules/'
+        - '/db/'
+        - '*.bak'
+        - '/.uploads-proxy'
+        - '/error_log'
+        - '/cgi-bin'
+        - '/info.php'
+        - 'wp-content/*.sql.gz'
+        - 'wp-content/debug.log'
+        - 'wp-content/themes/*/.git*'
+        - 'wp-content/themes/*/assets/src/'
+        - 'wp-content/themes/*/node_modules/'
+        - 'wp-content/themes/*/.editorconfig'
+        - 'wp-content/themes/*/.env'
+        - 'wp-content/themes/*/.env.bundler'
+        - 'wp-content/themes/*/.env.bundler.example'
+        - 'wp-content/themes/*/.eslintrc.json'
+        - 'wp-content/themes/*/.prettierrc'
+        - 'wp-content/themes/*/.rsyncignore'
+        - 'wp-content/themes/*/auth.json'
+        - 'wp-content/themes/*/gulpfile.js'
+        - 'wp-content/themes/*/ruleset.xml'
+        - 'wp-content/themes/*/webpack.mix.js'
+        - 'wp-content/themes/*/README.md'
+        - 'wp-content/themes/*/composer.json'
+        - 'wp-content/themes/*/composer.lock'
+        - 'wp-content/themes/*/package.json'
+        - 'wp-content/themes/*/yarn.lock'
+        - 'wp-content/themes/*/.node-version'
+        - 'wp-content/themes/*/languages/.gitkeep'
+        - 'wp-content/themes/*/version.sh'
+
+    ssh:
+        host: prod.ssh.host
+        rsync_options: '--chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r'
+
+    forbid:
+        push:
+            db: true
+            plugins: true
+            themes: false
+            languages: true
+            uploads: true
+            mu_plugins: true
+        pull:
+            db: false
+            plugins: false
+            themes: true
+            languages: false
+            uploads: false
+            mu_plugins: false
+
+    hooks:
+        pull:
+            after:
+                - command: 'wp plugin deactivate wp-mail-smtp post-smtp wp-rocket wk-consent-plugin wk-google-analytics mailtrap-for-wp broken-link-checker'
+                  where: local
+                  raise: false
+                - command: 'wp plugin install wp-mailhog-smtp --activate'
+                  where: local
+                  raise: false
