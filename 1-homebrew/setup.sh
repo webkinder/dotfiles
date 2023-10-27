@@ -7,6 +7,9 @@ cd "$DIR"
 
 sudo -v
 
+info "Installing Homebrew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 info "Adding Brew to PATH..."
 
 UNAME_MACHINE="$(/usr/bin/uname -m)"
@@ -29,15 +32,13 @@ brew bundle --no-lock
 brew cleanup
 
 echo 'eval "rbenv init - zsh" >/dev/null 2>&1' >> ~/.zshrc
-eval "$(rbenv init - zsh)"
-
 echo 'export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"' >> ~/.zshrc
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-
 echo 'export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"' >> ~/.zshrc
-export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
-
 echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> ~/.zshrc
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+echo 'fnm env --use-on-cd' >> ~/.zshrc
+
+source ~/.zshrc
 
 success "Finished installing Brew"
+
+# TODO: Documentation der commands und functions

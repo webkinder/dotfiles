@@ -34,3 +34,9 @@ find * -name "setup.sh" -not -wholename "1-homebrew*" | while read setup; do
 done
 
 success "Finished installing Dotfiles"
+
+# TODO: Basic macOS Settings
+# TODO Homebrew installation in scripot einbauen
+# TODO: Post install step: PHP my admin and no password login for php my admin
+# TODO: Wieso wird ordner 3 und 4 nicht ausgeführt?
+

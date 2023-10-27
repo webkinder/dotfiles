@@ -1,12 +1,12 @@
 #! /usr/bin/env sh
 
-DIR=$(dirname "$0")
+DIR=$($(brew --prefix coreutils)/libexec/gnubin/dirname "$0")
 cd "$DIR"
 
 . ../scripts/functions.sh
 
-SOURCE="$(realpath -m .)"
-DESTINATION="$(realpath -m ~/Library/Application\ Support/Code/User)"
+SOURCE="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m .)"
+DESTINATION="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m ~/Library/Application\ Support/Code/User)"
 
 info "Setting up Visual Studio Code..."
 
@@ -20,7 +20,7 @@ mkdir -p "$DESTINATION"
 mkdir -p "$DESTINATION/snippets"
 
 substep_info "Symlinking Visual Studio Code settings..."
-find * -not -name "$(basename ${0})" -type f | while read fn; do
+find * -not -name "$($(brew --prefix coreutils)/libexec/gnubin/basename ${0})" -type f | while read fn; do
     symlink "$SOURCE/$fn" "$DESTINATION/$fn"
 done
 

@@ -1,12 +1,12 @@
 #! /usr/bin/env sh
 
-DIR=$(dirname "$0")
+DIR=$($(brew --prefix coreutils)/libexec/gnubin/dirname "$0")
 cd "$DIR"
 
 . ../scripts/functions.sh
 
-SOURCE="$(realpath -m .)"
-DESTINATION="$(realpath -m ~/.ssh)"
+SOURCE="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m .)"
+DESTINATION="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m ~/.ssh)"
 
 info "Configuring ssh..."
 

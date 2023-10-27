@@ -1,17 +1,17 @@
 #! /usr/bin/env sh
 
-DIR=$(dirname "$0")
+DIR=$($(brew --prefix coreutils)/libexec/gnubin/dirname "$0")
 cd "$DIR"
 
 . ../scripts/functions.sh
 
-SOURCE="$(realpath -m .)"
-DESTINATION="$(realpath -m ~)"
+SOURCE="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m .)"
+DESTINATION="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m ~)"
 
 info "Configuring git..."
 
 find . -name ".git*" | while read fn; do
-    fn=$(basename $fn)
+    fn=$($(brew --prefix coreutils)/libexec/gnubin/basename $fn)
     symlink "$SOURCE/$fn" "$DESTINATION/$fn"
 done
 

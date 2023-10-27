@@ -1,14 +1,14 @@
 #! /usr/bin/env sh
 
-DIR=$(dirname "$0")
+DIR=$($(brew --prefix coreutils)/libexec/gnubin/dirname "$0")
 cd "$DIR"
 
 . ../scripts/functions.sh
 
 sudo -v
 
-SOURCE="$(realpath -m ~/.config/valet/Certificates)"
-DESTINATION="$(realpath -m ~)"
+SOURCE="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m ~/.config/valet/Certificates)"
+DESTINATION="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m ~)"
 
 info "Setting up Development Environment..."
 
@@ -18,28 +18,28 @@ brew services start mailhog
 
 composer global require laravel/valet
 
-valet install
+$HOME/.composer/vendor/bin/valet install
 symlink "$SOURCE" "$DESTINATION/.localhost-ssl"
 
-SOURCE="$(realpath -m .)"
-DESTINATION="$(realpath -m ~)"
+SOURCE="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m .)"
+DESTINATION="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m ~)"
 
 mkdir -p ~/repos/valet
-valet park ~/repos/valet
+$HOME/.composer/vendor/bin/valet park ~/repos/valet
 
 cd $(brew --prefix phpmyadmin)/share/phpmyadmin
-valet link phpmyadmin
-valet secure phpmyadmin
-cd "$DIR"
+$HOME/.composer/vendor/bin/valet link --secure phpmyadmin
 
-sudo valet trust
+sudo $HOME/.composer/vendor/bin/valet trust
 
 substep_info "Setting up Ruby..."
+eval "$(fnm env --use-on-cd)"
 fnm install 14
 fnm use 14
 fnm default 14
 
 substep_info "Setting up Ruby..."
+eval "$(rbenv init - zsh)"
 rbenv install 2.6.10
 rbenv global 2.6.10
 
@@ -50,15 +50,13 @@ gem install bcrypt_pbkdf
 
 substep_info "Setting up Vim..."
 
-
 find . -name ".vim*" | while read fn; do
-    fn=$(basename $fn)
+    fn=$($(brew --prefix coreutils)/libexec/gnubin/basename $fn)
     symlink "$SOURCE/$fn" "$DESTINATION/$fn"
 done
 
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
-
 
 substep_info "Setting up .npmrc..."
 symlink "$SOURCE/.npmrc" "$DESTINATION/.npmrc"
