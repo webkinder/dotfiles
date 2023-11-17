@@ -40,5 +40,3 @@ echo 'fnm env --use-on-cd' >> ~/.zshrc
 source ~/.zshrc
 
 success "Finished installing Brew"
-
-# TODO: Documentation der commands und functions

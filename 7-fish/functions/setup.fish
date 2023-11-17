@@ -13,7 +13,7 @@ function setup
     abbr glgp git log --stat -p
     abbr glgg git log --graph
     abbr glgga git log --graph --decorate --all
-    abbr glgm git log -graph --max-count=10
+    abbr glgm git log --graph --max-count=10
     abbr glo git log --oneline --decorate
     abbr glol git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
     abbr glols git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat

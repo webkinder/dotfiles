@@ -14,29 +14,11 @@ else
     error "Failed to obtain sudo credentials."
 fi
 
-info "Installing XCode command line tools..."
-
-if xcode-select --print-path &>/dev/null; then
-    success "XCode command line tools already installed."
-elif xcode-select --install &>/dev/null; then
-    success "Finished installing XCode command line tools."
-else
-    error "Failed to install XCode command line tools."
-fi
-
 info "Installing Rosetta..."
 sudo softwareupdate --install-rosetta
 
 ./1-homebrew/setup.sh
 
-find * -name "setup.sh" -not -wholename "1-homebrew*" | while read setup; do
-    ./$setup
-done
+find * -name "setup.sh" -not -wholename "1-homebrew*" -print0 | xargs -0 -I {} bash {}
 
 success "Finished installing Dotfiles"
-
-# TODO: Basic macOS Settings
-# TODO Homebrew installation in scripot einbauen
-# TODO: Post install step: PHP my admin and no password login for php my admin
-# TODO: Wieso wird ordner 3 und 4 nicht ausgeführt?
-
