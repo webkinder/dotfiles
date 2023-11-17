@@ -7,8 +7,6 @@
 - Fresh macOS installation
 
 ## Installation
-- Open the terminal application and run the following command to install Homebrew (You don't need to run the commands to add Homebrew to your PATH as requested by Homebrew after installation. The dotfiles script will add Homebrew to the PATH itself):
-`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - Download this repository and place it in your `~` folder and rename it to `.dotfiles`.
 - `cd ~/.dotfiles` into the folder and run `./bootstrap`
 
