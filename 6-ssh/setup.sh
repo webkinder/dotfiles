@@ -5,9 +5,6 @@ cd "$DIR"
 
 . ../scripts/functions.sh
 
-SOURCE="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m .)"
-DESTINATION="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m ~/.ssh)"
-
 info "Configuring ssh..."
 
 mkdir -p ~/.ssh
