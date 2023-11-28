@@ -34,6 +34,7 @@ brew 'git'
 brew 'grep'
 brew 'mailhog'
 brew 'mariadb'
+brew 'mas'
 brew 'nginx'
 brew 'openssh'
 brew 'php'
@@ -41,3 +42,5 @@ brew 'phpmyadmin'
 brew 'rbenv'
 brew 'wp-cli'
 brew 'yarn'
+
+mas 'Toggl Track: Hours & Time Log', id: 1291898086
