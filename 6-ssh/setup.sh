@@ -10,9 +10,9 @@ info "Configuring ssh..."
 mkdir -p ~/.ssh
 touch ~/.ssh/config
 
-if [ ! -f ~/.ssh/id_rsa ]; then
+if [ ! -f ~/.ssh/id_ed25519 ]; then
 	read -p "Enter your email address: " email
-	ssh-keygen -t rsa -b 4096 -C "$email" -f ~/.ssh/id_rsa -q -N ""
+	ssh-keygen -t ed25519 -C "$email" -f ~/.ssh/id_ed25519 -q -N ""
 fi
 
 success "Finished configuring ssh."
