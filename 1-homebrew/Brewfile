@@ -4,6 +4,8 @@ tap 'Schniz/tap'
 tap 'shivammathur/php'
 
 cask '1password'
+cask 'adobe-creative-cloud'
+cask 'asana'
 cask 'cyberduck'
 cask 'dbeaver-community'
 cask 'dropbox'
