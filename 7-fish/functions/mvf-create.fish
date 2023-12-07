@@ -18,28 +18,40 @@ function mvf-create --description "Create movefile.yml in the current directory 
     or return 1
 
     echo "Enter the following information:"
-    set -l replacements (begin
-        read -p "Production vhost: " prod_vhost
-        read -p "Production wordpress_path: " prod_wordpress_path
-        read -p "Production database name: " prod_database_name
-        read -p "Production database user: " prod_database_user
-        read -p "Production SSH host: " prod_ssh_host
 
-        echo "prod.vhost=$prod_vhost"
-        echo "prod.wordpress_path=$prod_wordpress_path"
-        echo "prod.database.name=$prod_database_name"
-        echo "prod.database.user=$prod_database_user"
-        echo "prod.ssh.host=$prod_ssh_host"
-        echo "local.vhost=https://(basename $PWD).test"
-        echo "local.wordpress_path=$PWD"
-        echo "local.database.name=(basename $PWD)"
-        echo "local.database.user=$USER"
-    end)
+    echo "Production vhost: "
+    read prod_vhost
+    echo "Production wordpress_path: "
+    read prod_wordpress_path
+    echo "Production database name: "
+    read prod_database_name
+    echo "Production database user: "
+    read prod_database_user
+    echo "Production database password: "
+    read prod_database_password
+    echo "Production SSH host: "
+    read prod_ssh_host
+
+    set local_basename (basename $PWD)
+    set local_vhost "https://$local_basename.test"
+    set local_database_name $local_basename
+
+    set replacements \
+        "prod.vhost=$prod_vhost" \
+        "prod.wordpress_path=$prod_wordpress_path" \
+        "prod.database.name=$prod_database_name" \
+        "prod.database.user=$prod_database_user" \
+        "prod.database.password=$prod_database_password" \
+        "prod.ssh.host=$prod_ssh_host" \
+        "local.vhost=$local_vhost" \
+        "local.wordpress_path=$PWD" \
+        "local.database.name=$local_database_name" \
+        "local.database.user=$USER"
 
     for replacement in $replacements
-        set -l key (echo $replacement | cut -d= -f1)
-        set -l value (echo $replacement | cut -d= -f2-)
-        sed -i '' "s/$key/$value/g" $movefile_path
+        set key (echo $replacement | cut -d= -f1)
+        set value (echo $replacement | cut -d= -f2-)
+        sed -i '' "s|$key|$value|g" $movefile_path
         or return 1
     end
 
