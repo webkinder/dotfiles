@@ -41,4 +41,9 @@ if [ ! -f ~/.ssh/id_ed25519 ]; then
 	ssh-keygen -t ed25519 -C "$email" -f ~/.ssh/id_ed25519 -q -N ""
 fi
 
+info "Configure user bin folder..."
+
+mkdir -p ~/bin
+echo 'export PATH="$HOME/bin:$PATH"' >> ~/.zshrc
+
 success "Finished installing Dotfiles"

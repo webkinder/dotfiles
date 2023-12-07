@@ -23,6 +23,9 @@ set -x -g PATH (brew --prefix findutils)/libexec/gnubin $PATH
 # Add Composer binaries to PATH
 set -x -g PATH $HOME/.composer/vendor/bin $PATH
 
+# Add user bin folder to PATH
+set -x -g PATH $HOME/bin $PATH
+
 # Setup FNM
 fnm env --use-on-cd | source
 
