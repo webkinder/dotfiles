@@ -24,10 +24,12 @@
 ```
 
 ### Allow no password login for phpmyadmin
-- Open the conifig.inc.php file and set `$cfg['Servers'][$i]['AllowNoPassword']` to true.
+- Open the config.inc.php file and set `$cfg['Servers'][$i]['AllowNoPassword']` to true.
 ```
 vim $(brew --prefix phpmyadmin)/share/phpmyadmin/config.inc.php
 ```
+
+phpmyadmin can now be accessed via the URL phpmyadmin.test in your browser. The username is equal to your computers username (`echo $USER`). The password field can be left empty.
 
 ### Install WK-CLI
 - Open the [WK-CLI repository](https://github.com/webkinder/wk-cli) and follow the installation guide in the README.md file.
@@ -71,7 +73,7 @@ vim $(brew --prefix phpmyadmin)/share/phpmyadmin/config.inc.php
 - `vs` -> `valet secure`
 
 ### Functions
-- `clean-db-backups` -> Delets all DB backups creacted by wordmove, that are older than 30 days.
+- `clean-db-backups` -> Deletes all DB backups created by wordmove, that are older than 30 days.
 - `gcm` -> `git checkout` to the default branch of the repository.
 - `ggl` -> `git pull` from the origin of the current branch.
 - `ggp` -> `git push` to the origin of the current branch.
