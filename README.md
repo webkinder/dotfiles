@@ -79,7 +79,7 @@ phpmyadmin can now be accessed via the URL phpmyadmin.test in your browser. The 
 - `ggp` -> `git push` to the origin of the current branch.
 - `mvf-create` -> Create movefile.yml in the current directory.
 - `pubkey` -> Copy your public ssh key to the clipboard.
-- `repo <repo-name>` -> `cd` into the repo directory inside your `~/repos` folder. Autocompletes with folders on the level `~/repos/*/<repo-name>`. If `<repo-name>` is not set this function `cd`s into the `~/repos/` folder.
+- `repo <repo-name>` -> `cd` into the repo directory inside your `~/repos` folder. Autocompletes with folders one level deep within `~/repos/*/<repo-name>`. If `<repo-name>` is not set, this function `cd`s into the `~/repos/` folder.
 - `update` -> Updates all brew, global yarn, global composer packages and Safari.
 - `vup <php-version>` -> Change PHP Version with Laravel Valet. Example: `vup 8.2`
 - `wml <env>` -> Runs `wordmove pull --all` with the selected environment. `<env>` can be omitted if only one environment is set in the movefile.yml.
