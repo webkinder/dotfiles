@@ -34,9 +34,9 @@ sudo $HOME/.composer/vendor/bin/valet trust
 
 substep_info "Setting up Ruby..."
 eval "$(fnm env --use-on-cd)"
-fnm install 14
-fnm use 14
-fnm default 14
+fnm install 18
+fnm use 18
+fnm default 18
 
 substep_info "Setting up Ruby..."
 eval "$(rbenv init - zsh)"
