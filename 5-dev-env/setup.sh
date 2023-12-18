@@ -64,8 +64,10 @@ symlink "$SOURCE/.npmrc" "$DESTINATION/.npmrc"
 substep_info "Setting up Proxy Driver for Valet..."
 symlink "$SOURCE/WordPressProxyValetDriver.php" "$DESTINATION/.config/valet/Drivers/WordPressProxyValetDriver.php"
 
-substep_info "Configuring ssh..."
+substep_info "Setting up unlighthouse"
+yarn global add @unlighthouse/cli puppeteer
 
+substep_info "Configuring ssh..."
 mkdir -p ~/.ssh
 touch ~/.ssh/config
 
