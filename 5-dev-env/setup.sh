@@ -32,7 +32,7 @@ $HOME/.composer/vendor/bin/valet link --secure phpmyadmin
 
 sudo $HOME/.composer/vendor/bin/valet trust
 
-substep_info "Setting up Ruby..."
+substep_info "Setting up FNM..."
 eval "$(fnm env --use-on-cd)"
 fnm install 18
 fnm use 18
