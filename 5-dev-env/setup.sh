@@ -64,6 +64,9 @@ symlink "$SOURCE/.npmrc" "$DESTINATION/.npmrc"
 substep_info "Setting up Proxy Driver for Valet..."
 symlink "$SOURCE/WordPressProxyValetDriver.php" "$DESTINATION/.config/valet/Drivers/WordPressProxyValetDriver.php"
 
+substep_info "Setting up WordPress Multisite Subdirectories Driver for Valet..."
+symlink "$SOURCE/WordPressMultisiteSubdirectoryValetDriver.php" "$DESTINATION/.config/valet/Drivers/WordPressMultisiteSubdirectoryValetDriver.php"
+
 substep_info "Setting up unlighthouse"
 $(brew --prefix)/bin/yarn global add @unlighthouse/cli puppeteer
 
