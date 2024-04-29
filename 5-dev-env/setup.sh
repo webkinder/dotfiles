@@ -58,8 +58,8 @@ done
 $(brew --prefix)/bin/git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-substep_info "Setting up .npmrc..."
-symlink "$SOURCE/.npmrc" "$DESTINATION/.npmrc"
+substep_info "Setting up .yarnrc.yml..."
+symlink "$SOURCE/.yarnrc.yml" "$DESTINATION/.yarnrc.yml"
 
 substep_info "Setting up Proxy Driver for Valet..."
 symlink "$SOURCE/WordPressProxyValetDriver.php" "$DESTINATION/.config/valet/Drivers/WordPressProxyValetDriver.php"

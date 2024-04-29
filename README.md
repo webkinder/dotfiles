@@ -17,10 +17,18 @@
 - Set expiration to `No expiration`.
 - Check the scope `write:packages`.
 - Copy the generated access token starting with `ghp_`
-- Paste the access token into your `~/.dotfiles/5-dev-env/.npmrc` file. The final result should look like this:
+- Paste the access token into your `~/.dotfiles/5-dev-env/.yarnrc.yml` file. The final result should look like this:
 ```
-@webkinder:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=ghp_************
+{
+    npmScopes: {
+        webkinder: {
+            npmRegistryServer: "https://npm.pkg.github.com",
+            npmAlwaysAuth: true,
+            npmAuthToken: "ghp_************",
+        },
+    },
+}
+
 ```
 
 ### Allow no password login for phpmyadmin
