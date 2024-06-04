@@ -41,9 +41,8 @@
 		"editor.formatOnSave": true
 	},
 	// js
-	"eslint.validate": ["javascript"],
-	"eslint.packageManager": "yarn",
 	"javascript.validate.enable": false,
+	"eslint.validate": ["javascript"],
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit"
 	},
