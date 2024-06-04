@@ -1,4 +1,3 @@
-tap 'homebrew/cask-versions'
 tap 'nicoverbruggen/homebrew-cask'
 tap 'Schniz/tap'
 tap 'shivammathur/php'
