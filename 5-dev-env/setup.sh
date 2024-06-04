@@ -48,7 +48,7 @@ $(brew --prefix)/bin/rbenv global 2.6.10
 substep_info "Setting up Wordmove..."
 $HOME/.rbenv/shims/gem install wordmove
 $HOME/.rbenv/shims/gem install ed25519
-$HOME/.rbenv/shims/gem install bcrypt_pbkdf
+$HOME/.rbenv/shims/gem install bcrypt_pbkdf -v 1.1.0
 
 substep_info "Setting up Vim..."
 
