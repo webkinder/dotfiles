@@ -18,19 +18,21 @@ brew services start mailhog
 
 $(brew --prefix)/bin/composer global require laravel/valet
 
-$(brew --prefix)/bin/valet install
+/Users/marcoluzi/.composer/vendor/bin/valet
+
+~/.composer/vendor/bin/valet install
 symlink "$SOURCE" "$DESTINATION/.localhost-ssl"
 
 SOURCE="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m .)"
 DESTINATION="$($(brew --prefix coreutils)/libexec/gnubin/realpath -m ~)"
 
 mkdir -p ~/repos/valet
-$(brew --prefix)/bin/valet park ~/repos/valet
+~/.composer/vendor/bin/valet park ~/repos/valet
 
 cd $(brew --prefix phpmyadmin)/share/phpmyadmin
-$(brew --prefix)/bin/valet link --secure phpmyadmin
+~/.composer/vendor/bin/valet link --secure phpmyadmin
 
-sudo $(brew --prefix)/bin/valet trust
+sudo ~/.composer/vendor/bin/valet trust
 
 substep_info "Setting up FNM..."
 eval "$(fnm env --use-on-cd)"
