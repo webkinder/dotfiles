@@ -17,7 +17,7 @@ cd $(brew --prefix phpmyadmin)/share/phpmyadmin && valet link && valet secure ph
 ```bash
 vim $(brew --prefix phpmyadmin)/share/phpmyadmin/config.inc.php
 ```
-6. Create a SSH key pair. Replace mail@webkinder.ch with your email address:
+6. Create a SSH key pair. Replace `mail@webkinder.ch` with your email address:
 ```bash
 ssh-keygen -t ed25519 -a 100 -C "mail@webkinder.ch"
 ```
