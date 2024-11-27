@@ -22,9 +22,6 @@
     ~/.config/valet/Drivers/WordPressMultisiteSubdirectoryValetDriver.php: config/valet/drivers/WordPressMultisiteSubdirectoryValetDriver.php
     ~/.config/valet/Drivers/WordPressProxyValetDriver.php: config/valet/drivers/WordPressProxyValetDriver.php
 
-- tap:
-  - shivammathur/php
-
 - brew:
   - bash
   - composer
@@ -70,4 +67,5 @@
 - shell:
   - [composer global require laravel/valet, Downloading Laravel Valet]
   - [valet install, Installing Laravel Valet]
+  - [valet use php@8.2, Setting PHP version to 8.2]
 
