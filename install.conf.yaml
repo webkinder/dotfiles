@@ -67,4 +67,4 @@
   - [composer global require laravel/valet, Downloading Laravel Valet]
   - [valet install, Installing Laravel Valet]
   - [valet use php@8.2, Setting PHP version to 8.2]
-
+  - [brew services start mariadb, Starting MariaDB]
