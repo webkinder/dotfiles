@@ -11,9 +11,13 @@
 - shell:
   - [git submodule update --init --recursive, Running git submodule update]
 
+- create:
+  - ~/.local/share/zsh/zsh_history
+
 - link:
     ~/.dotfiles: .
     ~/.gitconfig: home/gitconfig
+    ~/.zshenv: home/zshenv
     ~/.config/valet/Drivers/WordPressMultisiteSubdirectoryValetDriver.php: config/valet/drivers/WordPressMultisiteSubdirectoryValetDriver.php
     ~/.config/valet/Drivers/WordPressProxyValetDriver.php: config/valet/drivers/WordPressProxyValetDriver.php
 
@@ -32,7 +36,9 @@
   - node
   - openssh
   - php
+  - phpmyadmin
   - wp-cli
+  - zsh
 
 - cask:
   - asana
