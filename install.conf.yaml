@@ -1,0 +1,70 @@
+- defaults:
+    clean:
+      force: true
+    link:
+      create: true
+      relink: true
+      force: true
+
+- clean: ['~', '~/.config']
+
+- shell:
+  - [git submodule update --init --recursive, Running git submodule update]
+
+- create:
+  - ~/.local/share/zsh/zsh_history
+
+- link:
+    ~/.dotfiles: .
+    ~/.gitconfig: home/gitconfig
+    ~/.zshenv: home/zshenv
+    ~/.config/zsh/.zshrc: config/zsh/zshrc
+    ~/.config/valet/Drivers/WordPressMultisiteSubdirectoryValetDriver.php: config/valet/drivers/WordPressMultisiteSubdirectoryValetDriver.php
+    ~/.config/valet/Drivers/WordPressProxyValetDriver.php: config/valet/drivers/WordPressProxyValetDriver.php
+
+- brew:
+  - bash
+  - composer
+  - fnm
+  - gh
+  - git
+  - git-flow
+  - mariadb
+  - node
+  - openssh
+  - php
+  - phpmyadmin
+  - wp-cli
+  - zsh
+
+- cask:
+  - asana
+  - dropbox
+  - figma
+  - firefox
+  - google-chrome
+  - microsoft-auto-update
+  - microsoft-word
+  - microsoft-excel
+  - microsoft-teams
+  - notion
+  - slack
+  - visual-studio-code
+  - 1password
+
+- vscode:
+    exec: code
+    uninstall-not-listed: false
+    extensions:
+        - formulahendry.auto-rename-tag
+        - editorconfig.editorconfig
+        - dbaeumer.vscode-eslint
+        - eamodio.gitlens
+        - bmewburn.vscode-intelephense-client
+        - mblode.twig-language-2
+
+- shell:
+  - [composer global require laravel/valet, Downloading Laravel Valet]
+  - [valet install, Installing Laravel Valet]
+  - [valet use php@8.2, Setting PHP version to 8.2]
+  - [brew services start mariadb, Starting MariaDB]
