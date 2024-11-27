@@ -18,6 +18,7 @@
     ~/.dotfiles: .
     ~/.gitconfig: home/gitconfig
     ~/.zshenv: home/zshenv
+    ~/.config/zsh/.zshrc: config/zsh/zshrc
     ~/.config/valet/Drivers/WordPressMultisiteSubdirectoryValetDriver.php: config/valet/drivers/WordPressMultisiteSubdirectoryValetDriver.php
     ~/.config/valet/Drivers/WordPressProxyValetDriver.php: config/valet/drivers/WordPressProxyValetDriver.php
 
