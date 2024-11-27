@@ -13,3 +13,52 @@
 
 - link:
     ~/.dotfiles: .
+    ~/.gitconfig: home/gitconfig
+    ~/.config/valet/Drivers/WordPressMultisiteSubdirectoryValetDriver.php: config/valet/drivers/WordPressMultisiteSubdirectoryValetDriver.php
+    ~/.config/valet/Drivers/WordPressProxyValetDriver.php: config/valet/drivers/WordPressProxyValetDriver.php
+
+- tap:
+  - shivammathur/php
+
+- brew:
+  - bash
+  - composer
+  - coreutils
+  - fnm
+  - gh
+  - git
+  - git-flow
+  - mariadb
+  - node
+  - openssh
+  - php
+  - wp-cli
+
+- cask:
+  - asana
+  - dropbox
+  - figma
+  - firefox
+  - microsoft-auto-update
+  - microsoft-word
+  - microsoft-excel
+  - microsoft-teams
+  - notion
+  - slack
+  - visual-studio-code
+  - 1password
+
+- shell:
+  - [composer global require laravel/valet, Downloading Laravel Valet]
+  - [valet install, Installing Laravel Valet]
+
+- vscode:
+    exec: code
+    uninstall-not-listed: false
+    extensions:
+        - formulahendry.auto-rename-tag
+        - editorconfig.editorconfig
+        - dbaeumer.vscode-eslint
+        - eamodio.gitlens
+        - bmewburn.vscode-intelephense-client
+        - mblode.twig-language-2
