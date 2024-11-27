@@ -6,7 +6,7 @@ sudo touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress && su
 ```
 2. Clone this repository into your Documents folder:
 ```bash
-cd ~/Documents && git clone https://github.com/webkinder/dotfiles.git
+cd ~/Documents && git clone https://github.com/webkinder/dotfiles.git && cd ./dotfiles
 ```
 3. Run the script by typing `./install` in your terminal.
 4. Add phpmyadmin to laravel valet by executing the following command:
