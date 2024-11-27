@@ -41,20 +41,20 @@
   - wp-cli
   - zsh
 
-# - cask:
-#   - asana
-#   - dropbox
-#   - figma
-#   - firefox
-#   - google-chrome
-#   - microsoft-auto-update
-#   - microsoft-word
-#   - microsoft-excel
-#   - microsoft-teams
-#   - notion
-#   - slack
-#   - visual-studio-code
-#   - 1password
+- cask:
+  - asana
+  - dropbox
+  - figma
+  - firefox
+  - google-chrome
+  - microsoft-auto-update
+  - microsoft-word
+  - microsoft-excel
+  - microsoft-teams
+  - notion
+  - slack
+  - visual-studio-code
+  - 1password
 
 - vscode:
     exec: code
