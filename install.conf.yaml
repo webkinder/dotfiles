@@ -41,23 +41,19 @@
   - zsh
 
 - cask:
-  - asana
-  - dropbox
-  - figma
-  - firefox
+  # - asana
+  # - dropbox
+  # - figma
+  # - firefox
   - google-chrome
-  - microsoft-auto-update
-  - microsoft-word
-  - microsoft-excel
-  - microsoft-teams
-  - notion
-  - slack
-  - visual-studio-code
-  - 1password
-
-- shell:
-  - [composer global require laravel/valet, Downloading Laravel Valet]
-  - [valet install, Installing Laravel Valet]
+  # - microsoft-auto-update
+  # - microsoft-word
+  # - microsoft-excel
+  # - microsoft-teams
+  # - notion
+  # - slack
+  # - visual-studio-code
+  # - 1password
 
 - vscode:
     exec: code
@@ -69,3 +65,8 @@
         - eamodio.gitlens
         - bmewburn.vscode-intelephense-client
         - mblode.twig-language-2
+
+- shell:
+  - [composer global require laravel/valet, Downloading Laravel Valet]
+  - [valet install, Installing Laravel Valet]
+
