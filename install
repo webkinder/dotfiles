@@ -15,8 +15,5 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 sudo echo
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=~/.config/composer/vendor/bin:$PATH
-
-PATH=$PATH "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir dotbot-vscode --plugin-dir dotbot-brew -c "${CONFIG}" "${@}"
+PATH=/opt/homebrew/bin:/usr/local/bin:~/.config/composer/vendor/bin:$PATH \
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir dotbot-vscode --plugin-dir dotbot-brew -c "${CONFIG}" "${@}"
